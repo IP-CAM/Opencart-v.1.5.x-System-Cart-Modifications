@@ -8,14 +8,15 @@
         <file name="system/library/cart.php">
                 <operation>
                 
-                        <search position="replace"><![CDATA[
-                        $var = '123';
-                        ]]></search>
+                        <search position="before"><![CDATA[
+            			$option_data[] = array(
+            			]]></search>
                         
                         <add><![CDATA[
-                        $var = 'ABC';
+                        elseif ($option_value_query->row['weight_prefix'] == '*') {
+							$option_weight *= $option_value_query->row['weight'];
+						}
                         ]]></add>
-                        
                 </operation>
         </file> 
 </modification>
